@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: tnawochus/nodeapp:v1
+        image: nawochus/nodeapp:v1
         ports:
         - containerPort: 3000
         
