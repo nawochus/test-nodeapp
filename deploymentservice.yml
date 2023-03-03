@@ -1,11 +1,13 @@
-apiVersion: apps/v1
+apiVersion: api/v1
 kind: Deployment
 metadata:
   name: app-deployment
   labels:
     app: nodeapp
 spec:
-  replicas: 2
+  replicas: 
+  strategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       app: nodeapp
@@ -16,7 +18,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: nawochus/nodeapp:v1
+        image: nawochus/nodeapp:latest
         ports:
         - containerPort: 3000
         
